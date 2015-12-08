@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
     <title>Login test</title>
 </head>
 <body>
@@ -14,14 +15,17 @@ Remember to reload the page if you returned here from a safefleet site
     var divToken = document.getElementById("token");
     var link = document.getElementById("link");
     var r = new XMLHttpRequest();
-    r.open('GET','https://jsonp.afeld.me/?url=http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490',true);
+    /*r.open('GET','https://jsonp.afeld.me/?url=http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490',true);
     r.send();
-    var result = r.responseText;
+    var result = r.responseText;*/
     /*myCallback = function(response) {
         console.log(response);
         divToken.innerHTML = "ura";
     };*/
-    console.log(result);
+    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490') + '&callback=?', function(data){
+        console.log(data.contents);
+    });
+    //console.log(result);
     var token = "884bb66954d842e099a730768413ee74";
     //divToken.innerHTML = token;
     link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
