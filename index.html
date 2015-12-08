@@ -16,7 +16,7 @@ Remember to reload the page if you returned here from a Trackunit site
     var link = document.getElementById("link");
     $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
         var token = data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,'');
-        $("link").href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
+        link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
     });
 </script>
 </body>
