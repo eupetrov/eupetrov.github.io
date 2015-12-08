@@ -14,11 +14,10 @@ Remember to reload the page if you returned here from a Trackunit site
 <!--<script type="text/javascript" src= "http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490&callback=myCallback"></script>-->
 <script>
     var link = document.getElementById("link");
-    var token = '';
     $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
-        token = data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,'');
+        var token = data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,'');
+        $("link").href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
     });
-    link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
 </script>
 </body>
 </html>
