@@ -14,7 +14,7 @@ Remember to reload the page if you returned here from a safefleet site
     var divToken = document.getElementById("token");
     var link = document.getElementById("link");
     var r = new XMLHttpRequest();
-    r.open('GET','http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490',true);
+    r.open('GET','https://jsonp.afeld.me/?url=http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490',true);
     r.send();
     var result = r.responseText;
     /*myCallback = function(response) {
