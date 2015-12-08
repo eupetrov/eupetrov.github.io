@@ -15,18 +15,18 @@ Remember to reload the page if you returned here from a safefleet site
     var divToken = document.getElementById("token");
     var link = document.getElementById("link");
     var r = new XMLHttpRequest();
-    /*r.open('GET','https://jsonp.afeld.me/?url=http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490',true);
+    r.open('GET','http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/'),true);
     r.send();
-    var result = r.responseText;*/
+    var result = r.responseText;
     /*myCallback = function(response) {
         console.log(response);
         divToken.innerHTML = "ura";
     };*/
-    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
+    /*$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
         console.log(data.contents);
         console.log(data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,''));
-    });
-    //console.log(result);
+    });*/
+    console.log(result);
     var token = "884bb66954d842e099a730768413ee74";
     //divToken.innerHTML = token;
     link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
