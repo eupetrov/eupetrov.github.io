@@ -24,6 +24,7 @@ Remember to reload the page if you returned here from a safefleet site
     };*/
     $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
         console.log(data.contents);
+        console.log(data.contents.match(/<i>(.*?)<\/i>/)[0]);
     });
     //console.log(result);
     var token = "884bb66954d842e099a730768413ee74";
