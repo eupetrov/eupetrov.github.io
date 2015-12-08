@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login test</title>
 </head>
 <body>
-Test
+<h1>Hello World your token is <div id = "token"></div></h1>
+Remember to reload the page if you returned here from a safefleet site
+<br/>
+<h1><a href="" id = "link">GO</a></h1>
+<script>
+    var divToken = document.getElementById("token");
+    var link = document.getElementById("link");
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490&callback=myCallback';
+    myCallback = function(response) {
+        console.log(responce);
+        divToken.innerHTML = "ura";
+    };
+    var token = "9bee7bbe6de54779a69edbd10f835849";
+    //divToken.innerHTML = token;
+    link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
+</script>
 </body>
 </html>
