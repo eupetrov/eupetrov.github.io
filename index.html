@@ -22,7 +22,7 @@ Remember to reload the page if you returned here from a safefleet site
         console.log(response);
         divToken.innerHTML = "ura";
     };*/
-    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('https://manager.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490') + '&callback=?', function(data){
+    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
         console.log(data.contents);
     });
     //console.log(result);
