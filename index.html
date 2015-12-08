@@ -9,12 +9,10 @@
 Remember to reload the page if you returned here from a safefleet site
 <br/>
 <h1><a href="" id = "link">GO</a></h1>
+<script type="text/javascript" src= "http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490&callback=myCallback"></script>
 <script>
     var divToken = document.getElementById("token");
     var link = document.getElementById("link");
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490&callback=myCallback';
     myCallback = function(response) {
         console.log(responce);
         divToken.innerHTML = "ura";
