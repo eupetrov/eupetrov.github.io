@@ -6,30 +6,19 @@
     <title>Login test</title>
 </head>
 <body>
-<h1>Hello World your token is <div id = "token"></div></h1>
-Remember to reload the page if you returned here from a safefleet site
+<h1>
+Remember to reload the page if you returned here from a Trackunit site
+</h1>
 <br/>
-<h1><a href="" id = "link">GO</a></h1>
+<h1><a href="" id = "link">LOGIN</a></h1>
 <!--<script type="text/javascript" src= "http://prerelease.trackunit.com/GetLoginToken.ashx?userName=udv&password=mt9490&callback=myCallback"></script>-->
 <script>
-    var divToken = document.getElementById("token");
     var link = document.getElementById("link");
-    var r = new XMLHttpRequest();
-    r.open('GET','http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/'),true);
-    r.send();
-    var result = r.responseText;
-    /*myCallback = function(response) {
-        console.log(response);
-        divToken.innerHTML = "ura";
-    };*/
-    /*$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
-        console.log(data.contents);
-        console.log(data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,''));
-    });*/
-    console.log(result);
-    var token = "884bb66954d842e099a730768413ee74";
-    //divToken.innerHTML = token;
-    link.href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
+    var token = '';
+    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://v5-login-demo.herokuapp.com/') + '&callback=?', function(data){
+        token = data.contents.match(/<i>(.*?)<\/i>/)[0].replace(/<\/?i>/g,'');
+    });
+    $("link").href = "http://prerelease.trackunit.com/Open.ashx?token=" + token;
 </script>
 </body>
 </html>
